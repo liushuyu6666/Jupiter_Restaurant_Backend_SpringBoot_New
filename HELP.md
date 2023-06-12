@@ -9,4 +9,8 @@ Using `s3.tf` under the terraform folder to create a S3 bucket.
    2. run `terraform plan`, finally
    3. run `terraform apply`.
 
+## Install mongodb
+### Local
+Don't forget to install mongodb on-premise if you want to demo it locally. The database name should be `Spring_Boot_Jays`, which is defined in `application.properties`.
+
 

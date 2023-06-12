@@ -17,6 +17,7 @@ dependencies {
 	// Integrate Tomcat as the embedded servlet container, so that 8080 can be accessible
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 }
 
 tasks.named('test') {
