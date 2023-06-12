@@ -17,4 +17,7 @@ Using `s3.tf` under the terraform folder to create a S3 bucket.
 ### Local
 Don't forget to install mongodb on-premise if you want to demo it locally. The database name should be `Spring_Boot_Jays`, which is defined in `application.properties`.
 
+# Swagger
+Swagger is installed so after running this project, go to http://localhost:8080/swagger-ui/ to check all APIs.
+
 
