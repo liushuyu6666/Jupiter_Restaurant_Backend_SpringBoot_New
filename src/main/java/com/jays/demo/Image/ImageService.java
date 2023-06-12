@@ -7,6 +7,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 public class ImageService {
@@ -19,17 +20,19 @@ public class ImageService {
     public Image uploadImage(String imageName, MultipartFile multipartFile, String userId, boolean isPublic) throws Exception {
         String imageId = UUID.randomUUID().toString();
 
-        String url = this.s3Repository.uploadFile(imageId, multipartFile, "images");
+        String key = this.s3Repository.uploadFile(imageId, multipartFile, "images");
 
-        Image image = new Image(userId, imageName, url, isPublic);
+        Image image = new Image(userId, imageName, key, isPublic);
         return this.imageRepository.save(image);
     }
 
     public List<Image> listImages(String userId) {
-        return this.imageRepository.findByUserId(userId);
+        List<Image> images = this.imageRepository.findByUserId(userId);
+        return images.stream().filter(image -> this.s3Repository.objectExists(image.getKey())).toList();
     }
 
     public List<Image> listPublicImages() {
-        return this.imageRepository.findByIsPublic(true);
+        List<Image> images = this.imageRepository.findByIsPublic(true);
+        return images.stream().filter(image -> this.s3Repository.objectExists(image.getKey())).toList();
     }
 }

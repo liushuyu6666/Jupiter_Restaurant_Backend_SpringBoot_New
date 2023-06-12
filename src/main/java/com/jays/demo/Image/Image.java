@@ -16,17 +16,17 @@ public class Image {
     @NotBlank
     private String fileName;
     @NotBlank
-    private String url;
+    private String key;
 
     @NotBlank
     private boolean isPublic;
     @CreatedDate
     private Date uploadDate;
 
-    public Image(String userId, String fileName, String url, boolean isPublic) {
+    public Image(String userId, String fileName, String key, boolean isPublic) {
         this.userId = userId;
         this.fileName = fileName;
-        this.url = url;
+        this.key = key;
         this.isPublic = isPublic;
     }
 
@@ -54,12 +54,12 @@ public class Image {
         this.fileName = fileName;
     }
 
-    public String getUrl() {
-        return url;
+    public String getKey() {
+        return key;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public Date getUploadDate() {
