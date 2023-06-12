@@ -1,5 +1,9 @@
 # Getting Started
 
+## Prepare application.properties
+1. Copy and paste the `application.properties.example` and rename it to `application.properties`.
+2. Replace some fields with your own values.
+
 ## Create S3 bucket
 Using `s3.tf` under the terraform folder to create a S3 bucket.
 1. Install terraform from https://developer.hashicorp.com/terraform/downloads
