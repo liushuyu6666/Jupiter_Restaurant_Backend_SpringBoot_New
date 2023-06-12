@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.convert.*;
 import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
 // Add this to remove _class field.
+@Configuration
 public class MongoConfig {
 
     @Autowired
