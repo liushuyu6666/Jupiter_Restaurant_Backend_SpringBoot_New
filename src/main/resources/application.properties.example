@@ -3,3 +3,6 @@ jays.jwt.secretKey=Your_Secret_Key_You_Can_Use_Arbitrary_String_But_Need_To_Be_L
 spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017
 spring.data.mongodb.database=Spring_Boot_Jays
+
+# avoid "Cannot invoke 'org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()' because 'this.condition' is null"
+spring.mvc.pathmatch.matching-strategy=ant_path_matcher
