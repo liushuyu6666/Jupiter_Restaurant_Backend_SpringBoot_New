@@ -6,3 +6,13 @@ spring.data.mongodb.database=Spring_Boot_Jays
 
 # avoid "Cannot invoke 'org.springframework.web.servlet.mvc.condition.PatternsRequestCondition.getPatterns()' because 'this.condition' is null"
 spring.mvc.pathmatch.matching-strategy=ant_path_matcher
+
+# Should create a specific user for S3 only
+aws.S3.properties.accessKey=Your_Access_Key
+aws.S3.properties.secretKey=Your_Secret_Key
+aws.S3.properties.region=Your_Region
+aws.S3.properties.bucketName=Your_Bucket_Name
+
+# Allow the user to upload images beyond 1MB
+spring.servlet.multipart.max-file-size=10MB
+spring.servlet.multipart.max-request-size=10MB

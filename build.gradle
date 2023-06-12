@@ -19,6 +19,7 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
+	// For jwt
 	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
 	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
@@ -28,8 +29,12 @@ dependencies {
 
 	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '3.0.7'
 
+	// Swagger
 	implementation "io.springfox:springfox-boot-starter:3.0.0"
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+
+	// For S3
+	implementation 'com.amazonaws:aws-java-sdk-s3:1.12.454'
 
 }
 
