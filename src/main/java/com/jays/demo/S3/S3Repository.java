@@ -10,6 +10,7 @@ import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.HeadBucketRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
+import com.amazonaws.services.s3.model.S3Object;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
@@ -36,7 +37,7 @@ public class S3Repository {
     private void initializeAmazon() {
         AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
         this.s3client = AmazonS3ClientBuilder.standard()
-                .withRegion(Regions.fromName(region))
+                .withRegion(Regions.fromName(this.region))
                 .withCredentials(new AWSStaticCredentialsProvider(credentials))
                 .build();
     }
@@ -67,9 +68,18 @@ public class S3Repository {
         objectMetadata.setContentLength(multipartFile.getSize());
         String key = prefix + "/" + fileId;
         PutObjectRequest putObjectRequest =
-                new PutObjectRequest(bucketName, key, multipartFile.getInputStream(), objectMetadata);
-        s3client.putObject(putObjectRequest);
+                new PutObjectRequest(this.bucketName, key, multipartFile.getInputStream(), objectMetadata);
+        this.s3client.putObject(putObjectRequest);
 
         return key;
+    }
+
+    public boolean objectExists(String key) {
+        try {
+            this.s3client.getObject(this.bucketName, key);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
