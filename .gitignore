@@ -38,3 +38,6 @@ out/
 ### terraform ###
 terraform/*
 !terraform/*.tf
+
+### credentials ###
+src/main/resources/application.properties
