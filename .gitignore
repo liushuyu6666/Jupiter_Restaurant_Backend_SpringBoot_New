@@ -38,6 +38,12 @@ out/
 ### terraform ###
 terraform/*
 !terraform/*.tf
+!terraform/IAM
+!terraform/S3
+!terraform/Attach_Policy
+!terraform/*.tf.example
 
 ### credentials ###
 src/main/resources/application.properties
+terraform/credentials.tf
+terraform/S3/credentials.tf
