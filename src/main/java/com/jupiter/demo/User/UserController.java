@@ -1,15 +1,15 @@
-package com.jays.demo.User;
+package com.jupiter.demo.User;
 
-import com.jays.demo.Auth.AuthService;
-import com.jays.demo.Payload.LoginRequest;
-import com.jays.demo.Payload.RegisterRequest;
-import com.jays.demo.Payload.ResponseBody;
+import com.jupiter.demo.Auth.AuthService;
+import com.jupiter.demo.Payload.LoginRequest;
+import com.jupiter.demo.Payload.RegisterRequest;
+import com.jupiter.demo.Payload.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/v1/jays")
+@RequestMapping("/v1/jupiter")
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class UserController {

@@ -1,17 +1,17 @@
-package com.jays.demo.Image;
+package com.jupiter.demo.Image;
 
-import com.jays.demo.Auth.AuthService;
+import com.jupiter.demo.Auth.AuthService;
+import com.jupiter.demo.Payload.ResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import com.jays.demo.Payload.ResponseBody;
 
 
 import java.util.List;
 
-@RequestMapping("/v1/jays")
+@RequestMapping("/v1/jupiter")
 @RestController
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class ImageController {
@@ -47,7 +47,7 @@ public class ImageController {
             String userId = this.authService.authenticateToken(authentication);
             List<Image> images = this.imageService.listImages(userId);
 
-            ResponseBody<List<Image>> responseBody = new ResponseBody<>(images, "", null);
+            com.jupiter.demo.Payload.ResponseBody<List<Image>> responseBody = new com.jupiter.demo.Payload.ResponseBody<>(images, "", null);
             return ResponseEntity.ok(responseBody);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(e.getMessage());
@@ -59,7 +59,7 @@ public class ImageController {
     ) {
         List<Image> images = this.imageService.listPublicImages();
 
-        ResponseBody<List<Image>> responseBody = new ResponseBody<>(images, "", null);
+        com.jupiter.demo.Payload.ResponseBody<List<Image>> responseBody = new ResponseBody<>(images, "", null);
         return ResponseEntity.ok(responseBody);
     }
 }

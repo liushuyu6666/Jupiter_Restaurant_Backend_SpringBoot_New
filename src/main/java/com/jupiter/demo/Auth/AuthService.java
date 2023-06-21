@@ -1,4 +1,4 @@
-package com.jays.demo.Auth;
+package com.jupiter.demo.Auth;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -11,7 +11,7 @@ import java.util.Date;
 public class AuthService {
     // TODO: move to SecretManager
     // TODO: update these deprecated methods
-    @Value("${jays.jwt.secretKey}")
+    @Value("${jupiter.jwt.secretKey}")
     private String secretKey;
 
     public String generateToken(String userId) {

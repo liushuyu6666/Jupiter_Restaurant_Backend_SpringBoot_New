@@ -1,4 +1,4 @@
-package com.jays.demo.Image;
+package com.jupiter.demo.Image;
 
 import jakarta.validation.constraints.NotBlank;
 import org.springframework.data.annotation.CreatedDate;

@@ -1,4 +1,4 @@
-jays.jwt.secretKey=Your_Secret_Key_You_Can_Use_Arbitrary_String_But_Need_To_Be_Long_Enough
+jupiter.jwt.secretKey=Your_Secret_Key_You_Can_Use_Arbitrary_String_But_Need_To_Be_Long_Enough
 
 spring.data.mongodb.host=localhost
 spring.data.mongodb.port=27017

@@ -1,4 +1,4 @@
-package com.jays.demo.S3;
+package com.jupiter.demo.S3;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentials;

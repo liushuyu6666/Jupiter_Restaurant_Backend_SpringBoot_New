@@ -1,13 +1,12 @@
-package com.jays.demo.Image;
+package com.jupiter.demo.Image;
 
-import com.jays.demo.S3.S3Repository;
+import com.jupiter.demo.S3.S3Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class ImageService {

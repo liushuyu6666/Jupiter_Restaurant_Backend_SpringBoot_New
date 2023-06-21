@@ -1,6 +1,6 @@
-resource "aws_iam_policy" "s3_bucket_policy_spring_boot_jays" {
-    name   = "s3_bucket_policy_spring_boot_jays"
-    description = "Allows read and write access to the 'springbootjays' bucket"
+resource "aws_iam_policy" "s3_bucket_policy_spring_boot_jupiter" {
+    name   = "s3_bucket_policy_spring_boot_jupiter"
+    description = "Allows read and write access to the 'springbootjupiter' bucket"
     policy = <<EOF
 {
     "Version": "2012-10-17",
@@ -14,8 +14,8 @@ resource "aws_iam_policy" "s3_bucket_policy_spring_boot_jays" {
                 "s3:ListBucket"
             ],
             "Resource": [
-                "arn:aws:s3:::springbootjays",
-                "arn:aws:s3:::springbootjays/*"
+                "arn:aws:s3:::springbootjupiter",
+                "arn:aws:s3:::springbootjupiter/*"
             ]
         }
     ]
@@ -23,7 +23,7 @@ resource "aws_iam_policy" "s3_bucket_policy_spring_boot_jays" {
 EOF
 }
 
-resource "aws_iam_user_policy_attachment" "s3_user_attachment_spring_boot_jays" {
-    user       = "s3_user_spring_boot_jays"
-    policy_arn = aws_iam_policy.s3_bucket_policy_spring_boot_jays.arn
+resource "aws_iam_user_policy_attachment" "s3_user_attachment_spring_boot_jupiter" {
+    user       = "s3_user_spring_boot_jupiter"
+    policy_arn = aws_iam_policy.s3_bucket_policy_spring_boot_jupiter.arn
 }

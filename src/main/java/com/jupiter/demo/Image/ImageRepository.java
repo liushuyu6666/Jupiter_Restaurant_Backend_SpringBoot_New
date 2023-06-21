@@ -1,4 +1,4 @@
-package com.jays.demo.Image;
+package com.jupiter.demo.Image;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;

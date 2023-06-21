@@ -1,13 +1,24 @@
-package com.jays.demo.Payload;
+package com.jupiter.demo.Payload;
 
 import jakarta.validation.constraints.NotBlank;
 
-public class LoginRequest {
+public class RegisterRequest {
+    @NotBlank
+    private String username;
+
     @NotBlank
     private String password;
 
     @NotBlank
     private String email;
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
     public String getPassword() {
         return password;

@@ -1,4 +1,4 @@
-package com.jays.demo;
+package com.jupiter.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

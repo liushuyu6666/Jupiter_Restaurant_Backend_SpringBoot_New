@@ -37,6 +37,6 @@ locals {
 
 resource "local_file" "update_credentials_file" {
     filename = "../src/main/resources/application.properties"
-    content  = "${file("../src/main/resources/application.properties")}\n# AWS credentials of the user s3_user_spring_boot_jays. Generate from terraform script. \naws.S3.properties.accessKey=${local.access_key_id}\naws.S3.properties.secretKey=${local.secret_access_key}\naws.S3.properties.region=${var.region}\naws.S3.properties.bucketName=${local.bucket_name}\n"
+    content  = "${file("../src/main/resources/application.properties")}\n# AWS credentials of the user s3_user_spring_boot_jupiter. Generate from terraform script. \naws.S3.properties.accessKey=${local.access_key_id}\naws.S3.properties.secretKey=${local.secret_access_key}\naws.S3.properties.region=${var.region}\naws.S3.properties.bucketName=${local.bucket_name}\n"
 }
 
